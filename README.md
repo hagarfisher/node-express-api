@@ -67,10 +67,10 @@ The API should now be running and accessible at http://localhost:8080.
 ## Environment Variables
 
 The .env file should contain the following environment variables:
-PORT
-BASE_API_URL
-EXTERNAL_API_URL
-JWT_SECRET
+- PORT
+- BASE_API_URL
+- EXTERNAL_API_URL
+- JWT_SECRET
 
 ## API Usage
 Ensure you include the 'Authorization' header with a Bearer token for authentication where required.
