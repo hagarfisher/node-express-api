@@ -61,6 +61,12 @@ To run this project, follow these steps:
 5. Start the API server:
    ```shell
    npm run dev
+   ```
+   Or
+   ```shell
+   npm run build
+   npm run start
+   ```
 
 The API should now be running and accessible at http://localhost:8080.
 
