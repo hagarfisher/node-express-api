@@ -1,3 +1,4 @@
+import { HttpStatusCode } from "axios";
 import { NextFunction, Request, Response } from "express";
 import { Secret, decode, verify } from "jsonwebtoken";
 
@@ -9,17 +10,17 @@ export const verifyToken = (
 ) => {
   let token = req.headers.authorization?.split(" ")[1];
   if (!token) {
-    return res.status(403).send({
+    return res.status(HttpStatusCode.NotFound).send({
       message: "No token provided!",
     });
   }
   verify(token, secret, (err, decoded) => {
     if (err) {
-      return res.status(401).send({
+      return res.status(HttpStatusCode.NotFound).send({
         message: "Unauthorized!",
       });
     }
     // req.userId = decoded.id;
-    next();
+    return next();
   });
 };
